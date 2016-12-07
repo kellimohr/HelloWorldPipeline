@@ -11,8 +11,7 @@ node('master') {
         //sh "npm install" 
 
         //Build Docker image
-        def workspace = pwd{}
-        echo workspace
+        echo env.PATH
         def app = docker.build "kellimohr/helloworld:${BUILD_NUMBER}" 
     }
 
