@@ -11,7 +11,7 @@ node('master') {
         //sh "npm install" 
 
         //Build Docker image
-        def app = docker.build "kellimohr/helloworld:${env.BUILD_NUMBER}" 
+        def app = docker.build "kellimohr/helloworld:${BUILD_TAG}" 
     }
 
     stage('Test') {
@@ -23,6 +23,7 @@ node('master') {
     }
 
     stage('Deploy') {
+        input 'Ready to Deploy to Production?'
        
     }
 }
