@@ -11,7 +11,9 @@ node('master') {
         //sh "npm install" 
 
         //Build Docker image
-        def app = docker.build "kellimohr/helloworld:${BUILD_TAG}" 
+        def workspace = pwd{}
+        echo workspace
+        def app = docker.build "kellimohr/helloworld:${BUILD_NUMBER}" 
     }
 
     stage('Test') {
@@ -25,5 +27,9 @@ node('master') {
     stage('Deploy') {
         input 'Ready to Deploy to Production?'
        
+    }
+
+    stage('Cleanup'){
+
     }
 }
