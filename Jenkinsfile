@@ -9,10 +9,11 @@ node('master') {
     stage('Build') {
         sh "node -v"
         sh "npm install"
+        sh "npm start"
        
     }
     stage('Test') {
-       
+        sh "npm test"   
     }
     stage('Release') {
        
