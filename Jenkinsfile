@@ -8,16 +8,17 @@ node('master') {
 
     stage('Build') {
         sh "node -v"
-        sh "npm install"
-        sh "npm start"
-       
+        sh "npm install"  
     }
+
     stage('Test') {
         sh "npm test"   
     }
+
     stage('Release') {
-       
+        sh "npm start"
     }
+
     stage('Deploy') {
        
     }
