@@ -1,8 +1,8 @@
 FROM node:argon
 
 # Create app directory
-RUN mkdir -p /Users/Shared/Jenkins/Home/workspace/HelloWorld/images
-WORKDIR /usr/src/app
+# RUN mkdir -p /Users/Shared/Jenkins/Home/workspace/HelloWorld/images
+WORKDIR /Users/Shared/Jenkins/Home/workspace/HelloWorld/images
 
 # Install app dependencies
 COPY package.json /Users/Shared/Jenkins/Home/workspace/HelloWorld/images
