@@ -11,7 +11,8 @@ node('master') {
         //sh "npm install" 
 
         //Build Docker image
-        def app = docker.build "kellimohr/helloworld:${BUILD_NUMBER} /Users/Shared/Jenkins/Home/workspace/HelloWorld" 
+        dir /Users/Shared/Jenkins/Home/workspace/HelloWorld
+        def app = docker.build "kellimohr/helloworld:${BUILD_NUMBER}" 
     }
 
     stage('Test') {
